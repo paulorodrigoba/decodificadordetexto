@@ -5,9 +5,9 @@
   --cor-secundaria: #0A3871;
   --font-primaria: 'Inter', sans-serif;
   --font-secundaria: 'Poppins', sans-serif;
+  --tamanho-fonte: 1rem; /* Definindo um valor padrão para o tamanho da fonte */
 }
 /* Estilos gerais */
-*,
 *::before,
 *::after {
     margin: 0;
@@ -18,58 +18,39 @@ body {
   font-family: var(--font-primaria);
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.cabecalho {
+header {
   background-color: var(--cor-primaria);
-  padding: 20px 0;
-  text-align: left;
-}
-.cabecalho__menu {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.cabecalho__menu__link {
-  font-family: var(--fonte-primaria);
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--cor-primaria);
-  transition: color 0.3s ease;
-  padding: 10px 15px;
-  border-radius: 8px;
-}
-.apresentacao{
-  width: 680px;
-  height: 48px;
-  top: 168px;
-  left: 240px;
-  padding: 24;
-}
-.apresentacao__texto{
-  font-family: var(--font-primaria);
   color: var(--cor-secundaria);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0em;
-  text-align: left;
+  padding: 2% 4%; /* Ajuste de acordo com o tamanho desejado */
 }
-.logotipo {
-  width: 15%; /* Ajuste de acordo com o tamanho desejado */
-  height: auto; /* Para manter a proporção */
-  top: 2%; /* Ajuste de acordo com o posicionamento desejado */
-  left: 2%; /* Ajuste de acordo com o posicionamento desejado */
-  gap: 2%; /* Ajuste de acordo com o espaçamento desejado */
+
+.logotipo img {
+  width: 120px;
+  height: 48px;
+}
+
+.apresentacao {
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+  padding: 2rem; /* Convertendo de px para rem */
+}
+
+.apresentacao__texto {
+  font-size: 1.2rem; /* Convertendo de px para rem */
+  line-height: 3rem; /* Convertendo de px para rem */
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .rodape {
-  color: var(--cor-primaria);
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
   font-family: var(--font-primaria);
-  color:var(--cor-secundaria);
   text-align: center;
   padding: 1% 0; /* Ajuste de acordo com o tamanho desejado */
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }

@@ -3,10 +3,11 @@
 :root {
   --cor-primaria: #F3F5FC;
   --cor-secundaria: #0A3871;
+  --cor-terciaria: #FFFFFF; /* Mudando para branco para melhor contraste com o fundo */
   --font-primaria: 'Inter', sans-serif;
   --font-secundaria: 'Poppins', sans-serif;
-  --tamanho-fonte: 1rem; /* Definindo um valor padrão para o tamanho da fonte */
 }
+
 /* Estilos gerais */
 *::before,
 *::after {
@@ -14,49 +15,184 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
+  background-color: var(--cor-primaria);
   font-family: var(--font-primaria);
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  position: relative; /* Adicionando posição relativa para corrigir o posicionamento absoluto */
 }
 
-header {
-  background-color: var(--cor-primaria);
+.cabecalho {
+  position: fixed; /* Alterando para posição fixa */
+  top: 0; /* Fixando o cabeçalho no topo */
+  left: 0; /* Alinhando o cabeçalho à esquerda */
+  z-index: 1000; /* Atribuindo um valor alto ao z-index para garantir que o cabeçalho fique sempre acima do conteúdo */
+  width: 100%; /* Definindo a largura como 100% para ocupar toda a largura da tela */
+  background-color: var(--cor-terciaria); /* Adicionando um fundo para o cabeçalho para melhor visibilidade */
+  padding: 10px 20px; /* Adicionando preenchimento para os itens do menu */
+  display: flex;
+  justify-content: space-between; /* Alinhando os itens do menu nas extremidades */
+  align-items: center; /* Centralizando verticalmente os itens do menu */
+}
+
+.cabecalho__menu {
+  display: flex;
+  gap: 20px;
+}
+
+.cabecalho__menu__link {
+  font-family: var(--font-primaria);
+  font-size: 1.2rem;
+  text-decoration: none;
   color: var(--cor-secundaria);
-  padding: 2% 4%; /* Ajuste de acordo com o tamanho desejado */
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 8px;
 }
 
-.logotipo img {
+.logotipo {
   width: 120px;
   height: 48px;
 }
 
+
 .apresentacao {
-  background-color: var(--cor-primaria);
-  color: var(--cor-secundaria);
-  padding: 2rem; /* Convertendo de px para rem */
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .apresentacao__texto {
-  font-size: 2rem; /* 32px / 16px = 2rem */
+  color: var(--cor-secundaria);
+  max-width: 680px; /* Mudando para max-width para tornar responsivo */
   font-weight: 400;
-  line-height: 3rem; /* 48px / 16px = 3rem */
-  letter-spacing: 0;
-  text-align: left;
-  width: 42.5rem; /* 680px / 16px = 42.5rem */
-  height: 3rem; /* 48px / 16px = 3rem */
-  top: 10.5rem; /* 168px / 16px = 10.5rem */
-  left: 15rem; /* 240px / 16px = 15rem */
-
+  font-size: 32px;
+  line-height: 150%;
+  text-align: center; /* Centralizando o texto */
 }
 
-.rodape {
-  background-color: var(--cor-primaria);
-  color: var(--cor-secundaria);
-  font-family: var(--font-primaria);
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.container__left {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.container__right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+.myImage {
+  width: 336px;
+  height: 304px;
+  top: 283px;
+  left: 1032px;
+}
+
+.retangulo {
+  position: absolute;
+  width: 80%; /* Utilizando porcentagem para tornar responsivo */
+  max-width: 400px; /* Limitando a largura máxima */
+  height: auto; /* Ajustando altura para melhor proporção */
+  max-height: 944px;
+  margin: 20px auto; /* Centralizando horizontalmente e adicionando espaçamento */
+  border-radius: 32px;
+  border: 2px solid var(--cor-secundaria);
   text-align: center;
-  padding: 1% 0; /* Ajuste de acordo com o tamanho desejado */
+  font-size: 1.2rem; /* Alterando tamanho da fonte para responsivo */
+  padding: 40px 0; /* Adicionando espaço interno */
+  color: var(--cor-secundaria);
+  font-family: var(--font-secundaria);
+  left: 900px;
+  top: 70px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centralizando verticalmente */
+  font-weight: 400;
+  padding: 21.5px 0;
+  color: var(--cor-secundaria);
+  font-family: var(--font-secundaria);
+}
+.aviso {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute; /* Alterando para relativo para ajustar posicionamento responsivo */
+  width: 100%; /* Utilizando 100% para preencher a largura disponível */
+  margin-top: auto; /* Adicionando espaçamento superior */
+  display: flex;
+  gap: 10px;
+  top: 840px;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  position: absolute;
+  width: auto;
+  max-width: 680px;
+  height: 67px;
+  left: auto;
+  top: 885px;
+}
+
+.button1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center; /* Centralizando horizontalmente */
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+  background: var(--cor-secundaria);
+  border-radius: 24px;
+  color: var(--cor-terciaria);
+  font-family: var(--font-primaria);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.button2 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center; /* Centralizando horizontalmente */
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+  background: #D8DFE8;
+  border: 1px solid #0A3871;
+  border-radius: 24px;
+  color: #0A3871;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 }

@@ -1,14 +1,16 @@
+/* Importação das fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Definição de variáveis de cores e fontes */
 :root {
-  --cor-primaria: #F3F5FC;
-  --cor-secundaria: #0A3871;
-  --cor-terciaria: #FFFFFF; /* Mudando para branco para melhor contraste com o fundo */
-  --font-primaria: 'Inter', sans-serif;
-  --font-secundaria: 'Poppins', sans-serif;
+  --cor-primaria: #F3F5FC; /* Cor primária */
+  --cor-secundaria: #0A3871; /* Cor secundária */
+  --cor-terciaria: #FFFFFF; /* Cor terciária (branco) */
+  --font-primaria: 'Inter', sans-serif; /* Fonte primária */
+  --font-secundaria: 'Poppins', sans-serif; /* Fonte secundária */
 }
 
-/* Estilos gerais */
+/* Reset de margem, padding e box-sizing */
 *::before,
 *::after {
     margin: 0;
@@ -16,49 +18,54 @@
     box-sizing: border-box;
 }
 
+/* Estilos gerais do corpo da página */
 body {
-  background-color: var(--cor-primaria);
-  font-family: var(--font-primaria);
+  background-color: var(--cor-primaria); /* Cor de fundo */
+  font-family: var(--font-primaria); /* Fonte padrão */
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  position: relative; /* Adicionando posição relativa para corrigir o posicionamento absoluto */
+  min-height: 100vh; /* Altura mínima da viewport */
+  position: relative; /* Posição relativa para elementos absolutos dentro */
 }
 
+/* Estilos do cabeçalho */
 .cabecalho {
-  position: fixed; /* Alterando para posição fixa */
-  top: 0; /* Fixando o cabeçalho no topo */
-  left: 0; /* Alinhando o cabeçalho à esquerda */
-  z-index: 1000; /* Atribuindo um valor alto ao z-index para garantir que o cabeçalho fique sempre acima do conteúdo */
-  width: 100%; /* Definindo a largura como 100% para ocupar toda a largura da tela */
-  background-color: var(--cor-terciaria); /* Adicionando um fundo para o cabeçalho para melhor visibilidade */
-  padding: 10px 20px; /* Adicionando preenchimento para os itens do menu */
+  position: fixed; /* Cabeçalho fixo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Z-index alto para sobrepor outros elementos */
+  width: 100%;
+  background-color: var(--cor-terciaria); /* Cor de fundo */
+  padding: 10px 20px; /* Preenchimento */
   display: flex;
-  justify-content: space-between; /* Alinhando os itens do menu nas extremidades */
-  align-items: center; /* Centralizando verticalmente os itens do menu */
+  justify-content: space-between; /* Alinhamento dos itens */
+  align-items: center;
 }
 
+/* Estilos do menu no cabeçalho */
 .cabecalho__menu {
   display: flex;
-  gap: 20px;
+  gap: 20px; /* Espaçamento entre itens */
 }
 
+/* Estilos dos links do menu */
 .cabecalho__menu__link {
   font-family: var(--font-primaria);
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--cor-secundaria);
-  transition: color 0.3s ease;
-  padding: 10px 15px;
-  border-radius: 8px;
+  font-size: 1.2rem; /* Tamanho da fonte */
+  text-decoration: none; /* Sem decoração de texto */
+  color: var(--cor-secundaria); /* Cor do texto */
+  transition: color 0.3s ease; /* Transição de cor suave */
+  padding: 10px 15px; /* Preenchimento */
+  border-radius: 8px; /* Borda arredondada */
 }
 
+/* Estilos do logotipo */
 .logotipo {
   width: 120px;
   height: 48px;
 }
 
-
+/* Estilos da seção de apresentação */
 .apresentacao {
   padding: 5% 10%;
   display: flex;
@@ -66,133 +73,99 @@ body {
   align-items: center;
 }
 
-.apresentacao__texto {
-  color: var(--cor-secundaria);
-  max-width: 680px; /* Mudando para max-width para tornar responsivo */
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 150%;
-  text-align: center; /* Centralizando o texto */
+/* Estilos do texto de apresentação e do textarea */
+.apresentacao__texto,
+.container__left textarea {
+  border: none; /* Removendo a borda */
+  outline: none; /* Removendo a linha de foco */
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria); /* Cor do texto */
+  max-width: 100%; /* Largura máxima */
+  font-weight: 400; /* Peso da fonte */
+  font-size: 32px; /* Tamanho da fonte */
+  line-height: 150%; /* Altura da linha */
+  text-align: center; /* Alinhamento do texto */
 }
 
+/* Estilos do contêiner principal */
 .container {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
 }
-
-.container__left {
-  flex: 1;
+.retangulo{
+  width: 100%;
+}
+/* Estilos dos elementos da esquerda e direita dentro do contêiner */
+.container__left, .container__right {
+  width: 100%;
+}
+.container__right p {
+  background-color: var(--cor-terciaria);
+  height: 100px;
+  padding: 10px;
+  font-size: 32px;
+  color: var(--cor-secundaria); /* Cor do texto */
+  text-align: center; /* Alinhamento do texto */
+  border-radius: 8px;
+  border: 2px solid var(--cor-secundaria); /* Borda sólida */
   display: flex;
-  justify-content: left;
   align-items: center;
+  justify-content: center;
 }
 
-.container__right {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 20px;
-}
-.myImage {
-  width: 336px;
-  height: 304px;
-  top: 283px;
-  left: 1032px;
+/* Estilos do textarea */
+.container__left textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 32px;
+  border-radius: 8px;
+  border: 2px solid var(--cor-secundaria); /* Borda sólida */
 }
 
-.retangulo {
-  position: absolute;
-  width: 80%; /* Utilizando porcentagem para tornar responsivo */
-  max-width: 400px; /* Limitando a largura máxima */
-  height: auto; /* Ajustando altura para melhor proporção */
-  max-height: 944px;
-  margin: 20px auto; /* Centralizando horizontalmente e adicionando espaçamento */
-  border-radius: 32px;
-  border: 2px solid var(--cor-secundaria);
-  text-align: center;
-  font-size: 1.2rem; /* Alterando tamanho da fonte para responsivo */
-  padding: 40px 0; /* Adicionando espaço interno */
-  color: var(--cor-secundaria);
-  font-family: var(--font-secundaria);
-  left: 900px;
-  top: 70px;
-  border-radius: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centralizando verticalmente */
-  font-weight: 400;
-  padding: 21.5px 0;
-  color: var(--cor-secundaria);
-  font-family: var(--font-secundaria);
-}
+/* Estilos do aviso */
 .aviso {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
-  position: absolute; /* Alterando para relativo para ajustar posicionamento responsivo */
-  width: 100%; /* Utilizando 100% para preencher a largura disponível */
-  margin-top: auto; /* Adicionando espaçamento superior */
-  display: flex;
-  gap: 10px;
-  top: 840px;
+  text-align: center; /* Alinhamento do texto */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: 400; /* Peso da fonte */
+  width: 100%;
+  margin-top: 20px; /* Margem superior */
 }
+
+/* Estilos do contêiner de botões */
 .button-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-  position: absolute;
-  width: auto;
-  max-width: 680px;
-  height: 67px;
-  left: auto;
-  top: 885px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px; /* Preenchimento superior */
 }
 
-.button1 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center; /* Centralizando horizontalmente */
-  padding: 24px;
-  gap: 8px;
-  width: 328px;
-  height: 67px;
-  background: var(--cor-secundaria);
-  border-radius: 24px;
-  color: var(--cor-terciaria);
-  font-family: var(--font-primaria);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
+/* Estilos dos botões Criptografar, Descriptografar e Copiar */
+.button1,
+.button2,
+#btnCopiar {
+  width: 100%;
+  max-width: 328px; /* Largura máxima */
+  height: 67px; /* Altura */
+  background: var(--cor-secundaria); /* Cor de fundo */
+  border-radius: 24px; /* Borda arredondada */
+  color: var(--cor-terciaria); /* Cor do texto */
+  font-family: var(--font-primaria); /* Fonte */
+  font-style: normal; /* Estilo normal */
+  font-weight: 400; /* Peso da fonte */
+  font-size: 16px; /* Tamanho da fonte */
+  line-height: 19px; /* Altura da linha */
+  text-align: center; /* Alinhamento do texto */
+  margin-bottom: 20px; /* Margem inferior */
 }
 
+/* Estilos específicos do botão Descriptografar */
 .button2 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center; /* Centralizando horizontalmente */
-  padding: 24px;
-  gap: 8px;
-  width: 328px;
-  height: 67px;
-  background: #D8DFE8;
-  border: 1px solid #0A3871;
-  border-radius: 24px;
-  color: #0A3871;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
+  background: #D8DFE8; /* Cor de fundo */
+  border: 1px solid #0A3871; /* Borda sólida */
+  color: #0A3871; /* Cor do texto */
 }
